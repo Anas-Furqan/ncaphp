@@ -1,0 +1,162 @@
+/* Admin Upload Page Styling */
+.admin-upload-container {
+    max-width: 1200px;
+    margin: 8% auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.admin-sidebar {
+    flex: 1;
+    min-width: 220px;
+    margin-right: 20px;
+}
+
+.admin-sidebar h2 {
+    color: #0044cc;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.admin-sidebar ul li a {
+    text-decoration: none;
+    color: #0044cc;
+    font-size: 18px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    padding-left: 10px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.admin-sidebar ul li a:hover {
+    color: #0033aa;
+    border-left: 3px solid #0033aa;
+}
+
+.admin-main {
+    flex: 3;
+    min-width: 500px;
+}
+
+.admin-main h1 {
+    color: #0044cc;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.admin-main p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.success, .error {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: #28a745;
+}
+
+.error {
+    color: #dc3545;
+}
+
+form {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="file"],
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button.upload {
+    background-color: #0044cc;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button.upload:hover {
+    background-color: #0033aa;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-upload-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .admin-sidebar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .admin-main {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-sidebar h2 {
+        font-size: 20px;
+    }
+
+    .admin-sidebar ul li a {
+        font-size: 16px;
+    }
+
+    .admin-main h1 {
+        font-size: 24px;
+    }
+
+    form input[type="text"],
+    form input[type="file"],
+    form select {
+        font-size: 14px;
+    }
+
+    form button.upload {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

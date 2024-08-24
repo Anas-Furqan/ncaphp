@@ -1,0 +1,71 @@
+/* General Notes Page Styling */
+.notes-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #0044cc;
+    margin-bottom: 20px;
+}
+
+.field-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.field {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.field-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid #0044cc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.field-icon {
+    width: 40px;
+    height: 40px;
+}
+
+h2 {
+    margin: 0;
+    color: #0044cc;
+}
+
+.subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subject-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.subject-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.subject-list li:last-child {
+    border-bottom: none;
+}
+
