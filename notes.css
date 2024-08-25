@@ -69,3 +69,8 @@ h2 {
     border-bottom: none;
 }
 
+.subject-list li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease;
+}

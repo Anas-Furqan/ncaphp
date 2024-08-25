@@ -54,12 +54,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <h2>Computer Science</h2>
                 </div>
                 <ul class="subject-list">
-                <li><i class="fa-solid fa-calculator subject-icon"></i> Mathematics</li>
-                <li><i class="fa-solid fa-computer subject-icon"></i> Computer</li>
+                <li><i class="fa-solid fa-calculator subject-icon"></i> <a href="maths.php"> Mathematics</a></li>
+                <li><i class="fa-solid fa-computer subject-icon"></i><a href="computer.php"> Computer</a></li>
                 <li><i class="fa-solid fa-atom subject-icon"></i><a href="physics.php"> Physics</a></li>
-                <li><i class="fa-solid fa-flag subject-icon"></i> Pakistan Studies</li>
-                <li><i class="fa-solid fa-language  subject-icon"></i> English</li>
-                <li><i class="fa-solid fa-language  subject-icon"></i> Urdu</li>
+                <li><i class="fa-solid fa-flag subject-icon"></i><a href="pakstudies.php"> Pakistan Studies</a></li>
+                <li><i class="fa-solid fa-language  subject-icon"></i> <a href="english.php"> English</a></li>
+                <li><i class="fa-solid fa-language  subject-icon"></i> <a href="urdu.php"> Urdu</a></li>
                     
             </ul>
             </section>
@@ -70,12 +70,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <h2>Medical Science</h2>
                 </div>
                 <ul class="subject-list">
-                <li><i class="fa-solid fa-calculator subject-icon"></i> Mathematics</li>
-                <li><i class="fa-solid fa-flask subject-icon"></i> Chemistry</li>
-                <li><i class="fa-solid fa-atom subject-icon"></i> Physics</li>
-                <li><i class="fa-solid fa-flag subject-icon"></i> Pakistan Studies</li>
-                <li><i class="fa-solid fa-language  subject-icon"></i> English</li>
-                <li><i class="fa-solid fa-language  subject-icon"></i> Urdu</li>
+                <li><i class="fa-solid fa-calculator subject-icon"></i> <a href="maths.php"> Mathematics</a></li>
+                <li><i class="fa-solid fa-flask subject-icon"></i><a href="chemistry.php"> Chemistry</a></li>
+                <li><i class="fa-solid fa-atom subject-icon"></i><a href="physics.php"> Physics</a></li>
+                <li><i class="fa-solid fa-flag subject-icon"></i><a href="pakstudies.php"> Pakistan Studies</a></li>
+                <li><i class="fa-solid fa-language  subject-icon"></i> <a href="english.php"> English</a></li>
+                <li><i class="fa-solid fa-language  subject-icon"></i> <a href="urdu.php"> Urdu</a></li>
                 </ul>
             </section>
 
@@ -85,12 +85,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <h2>Pre-Engineering</h2>
                 </div>
                 <ul class="subject-list">
-                <li><i class="fa-solid fa-calculator subject-icon"></i> Mathematics</li>
-                <li><i class="fa-solid fa-flask subject-icon"></i> Chemistry</li>
-                <li><i class="fa-solid fa-atom subject-icon"></i> Physics</li>
-                <li><i class="fa-solid fa-flag subject-icon"></i> Pakistan Studies</li>
-                <li><i class="fa-solid fa-language  subject-icon"></i> English</li>
-                <li><i class="fa-solid fa-language  subject-icon"></i> Urdu</li>
+                <li><i class="fa-solid fa-calculator subject-icon"></i> <a href="maths.php"> Mathematics</a></li>
+                <li><i class="fa-solid fa-flask subject-icon"></i><a href="chemistry.php"> Chemistry</a></li>
+                <li><i class="fa-solid fa-atom subject-icon"></i><a href="physics.php"> Physics</a></li>
+                <li><i class="fa-solid fa-flag subject-icon"></i><a href="pakstudies.php"> Pakistan Studies</a></li>
+                <li><i class="fa-solid fa-language  subject-icon"></i> <a href="english.php"> English</a></li>
+                <li><i class="fa-solid fa-language  subject-icon"></i> <a href="urdu.php"> Urdu</a></li>
                 </ul>
             </section>
         </div>
