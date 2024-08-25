@@ -5,10 +5,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
     exit();
 }
 
-$conn = new mysqli("localhost", "root", "", "ncaphp");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'connection.php';
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
