@@ -14,7 +14,8 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="index.php" class="logo">CollegeCommunity</a>
+                
+                <a href="index.php" class="logo"> <img src="./images/logo.png" alt=""> NCA BAHRIA</a>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="notes.php">Notes</a></li>

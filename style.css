@@ -37,6 +37,10 @@ body {
     color: #fff;
 }
 
+.navbar .logo img{
+    width: 50px;
+}
+
 .navbar .nav-links {
     list-style: none;
     display: flex;
