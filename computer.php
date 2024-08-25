@@ -15,7 +15,7 @@ $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Fetch PDFs from the database
-$query = $pdo->prepare("SELECT * FROM computer");
+$query = $pdo->prepare("SELECT * FROM computer_science");
 $query->execute();
 $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -25,7 +25,7 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Notes | Your College Community</title>
+    <title>Computer Notes | Your College Community</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="computer.css">
 </head>
@@ -56,7 +56,7 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main class="physics-container">
-        <h1>Physics Notes</h1>
+        <h1>Computer Notes</h1>
         <div class="pdf-grid">
             <?php foreach ($pdfs as $pdf): ?>
                 <div class="pdf-item">

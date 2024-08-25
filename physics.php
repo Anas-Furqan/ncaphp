@@ -27,7 +27,9 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Notes | Your College Community</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="physics.css">
+    <link rel="stylesheet" href="physics.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <!-- Header (Navbar) -->
@@ -60,12 +62,12 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="pdf-grid">
             <?php foreach ($pdfs as $pdf): ?>
                 <div class="pdf-item">
-                    <embed src="uploads/<?php echo htmlspecialchars($pdf['filename']); ?>" type="application/pdf" class="pdf-preview" />
+                    <embed src="uploads/physics/<?php echo htmlspecialchars($pdf['file']); ?>" type="application/pdf" class="pdf-preview" />
                     <div class="pdf-details">
                         <h3><?php echo htmlspecialchars($pdf['title']); ?></h3>
                         <div class="pdf-buttons">
-                            <a href="uploads/<?php echo htmlspecialchars($pdf['filename']); ?>" target="_blank" class="button view">View PDF</a>
-                            <a href="uploads/<?php echo htmlspecialchars($pdf['filename']); ?>" download class="button download">Download PDF</a>
+                            <a href="uploads/<?php echo htmlspecialchars($pdf['file']); ?>" target="_blank" class="button view"><i class="fas fa-eye"></i>View PDF</a>
+                            <a href="uploads/<?php echo htmlspecialchars($pdf['file']); ?>" download class="button download"><i class="fas fa-download"></i>Download PDF</a>
                         </div>
                     </div>
                 </div>

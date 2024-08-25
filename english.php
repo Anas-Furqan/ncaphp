@@ -25,7 +25,7 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Notes | Your College Community</title>
+    <title>English Notes | Your College Community</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="english.css">
 </head>
@@ -56,7 +56,7 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main class="physics-container">
-        <h1>Physics Notes</h1>
+        <h1>English Notes</h1>
         <div class="pdf-grid">
             <?php foreach ($pdfs as $pdf): ?>
                 <div class="pdf-item">
