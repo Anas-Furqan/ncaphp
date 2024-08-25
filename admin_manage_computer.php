@@ -91,6 +91,7 @@ $conn->close();
                     </ul>
                 </li>
                 <li><a href="admin_user_crud.php">Manage Users</a></li>
+                <li><a href="admin_feedback_crud.php">Manage Feedbacks</a></li>
                 <li><a href="admin_logout.php">Logout</a></li>
             </ul>
         </div>

@@ -1,0 +1,145 @@
+/* General styling for the about page */
+.about-container {
+    max-width: 1200px;
+    margin: 7% auto 4% auto;
+    padding: 20px;
+}
+
+/* Intro section styling */
+.about-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.intro-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.intro-content h1 {
+    font-size: 2.5rem;
+    color: #004a99; /* Matches the primary color used in the navbar */
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 15px;
+}
+
+.intro-image {
+    flex: 1;
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mission and values section styling */
+.our-mission, .our-values {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.our-mission h2, .our-values h2 {
+    font-size: 2rem;
+    color: #004a99;
+}
+
+.our-mission p, .our-values p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Values section with icons */
+.values-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.value-item {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    color: #ffa500; /* Accent color for icons */
+    margin-bottom: 10px;
+}
+
+.value-item h3 {
+    font-size: 1.5rem;
+    color: #004a99;
+}
+
+.value-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Team section styling */
+.meet-the-team {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.meet-the-team h2 {
+    font-size: 2rem;
+    color: #004a99;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.team-member {
+    text-align: center;
+    width: 30%;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about-intro {
+        flex-direction: column;
+    }
+
+    .values-container, .team-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .value-item, .team-member {
+        width: 100%;
+    }
+}

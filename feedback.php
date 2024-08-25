@@ -1,23 +1,6 @@
 <?php
+// Start session
 session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: login.php?message=Please log in to access this page.");
-    exit;
-}
-
-// Database connection
-$host = 'localhost';
-$db = 'ncaphp';
-$user = 'root';
-$pass = '';
-
-$pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-// Fetch PDFs from the database
-$query = $pdo->prepare("SELECT * FROM maths");
-$query->execute();
-$pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -25,16 +8,21 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maths Notes | Your College Community</title>
+    <title>Feedback - College Community</title>
+    <!-- Link to the main CSS file -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="maths.css">
+    <!-- Link to the specific CSS file for the feedback page -->
+    <link rel="stylesheet" href="feedback.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header (Navbar) -->
-    <header>
+   <!-- Header (Navbar) -->
+   <header>
         <nav class="navbar">
             <div class="container">
-                <a href="index.php" class="logo"><img src="./images/logo.png" alt=""> NCA BAHRIA</a>
+                
+                <a href="index.php" class="logo"> <img src="./images/logo.png" alt=""> NCA BAHRIA</a>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="notes.php">Notes</a></li>
@@ -55,26 +43,30 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
         </nav>
     </header>
 
-    <main class="physics-container">
-        <h1>Maths Notes</h1>
-        <div class="pdf-grid">
-            <?php foreach ($pdfs as $pdf): ?>
-                <div class="pdf-item">
-                    <embed src="uploads/<?php echo htmlspecialchars($pdf['filename']); ?>" type="application/pdf" class="pdf-preview" />
-                    <div class="pdf-details">
-                        <h3><?php echo htmlspecialchars($pdf['title']); ?></h3>
-                        <div class="pdf-buttons">
-                            <a href="uploads/<?php echo htmlspecialchars($pdf['filename']); ?>" target="_blank" class="button view">View PDF</a>
-                            <a href="uploads/<?php echo htmlspecialchars($pdf['filename']); ?>" download class="button download">Download PDF</a>
-                        </div>
-                    </div>
+    <!-- Main content area -->
+    <div class="feedback-container">
+        <section class="feedback-form">
+            <h1>We Value Your Feedback</h1>
+            <p>Your feedback helps us improve our community and services. Please let us know your thoughts.</p>
+            <form action="submit_feedback.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-            <?php endforeach; ?>
-        </div>
-    </main>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Feedback</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </div>
 
-    
-   <footer>
+    <footer>
     <div class="footer-container">
         <div class="footer-left">
             <h2>Your College Community</h2>
@@ -106,6 +98,5 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
         </ul>
     </div>
 </footer>
-
 </body>
 </html>

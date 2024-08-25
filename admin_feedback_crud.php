@@ -1,35 +1,34 @@
 <?php
+// Start session to check if the user is an admin
 session_start();
-if (!isset($_SESSION['admin_logged_in'])) {
-    header('Location: admin_login.php');
-    exit();
-}
 
-$conn = new mysqli("localhost", "root", "", "ncaphp");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Check if the user is logged in and is an admin
+// if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'anaslaravel@gmail.com') {
+//     echo "<script>alert('Access denied. Admins only.'); window.location.href='login.php';</script>";
+//     exit();
+// }
 
-if (isset($_POST['submit'])) {
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $file = $_FILES['file']['name'];
-    $target_dir = "uploads/english/";
-    $target_file = $target_dir . basename($file);
+// Include the database connection file
+include 'connection.php';
 
-    if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
-        $sql = "INSERT INTO english (title, description, file) VALUES ('$title', '$description', '$file')";
-        if ($conn->query($sql) === TRUE) {
-            $success = "Note added successfully!";
-        } else {
-            $error = "Error adding note: " . $conn->error;
-        }
+// Handle user deletion
+if (isset($_GET['delete'])) {
+    $userId = intval($_GET['delete']);
+    $deleteQuery = "DELETE FROM feedback WHERE id = ?";
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $userId);
+    if ($stmt->execute()) {
+        echo "<script>alert('User deleted successfully.'); window.location.href='user_crud.php';</script>";
     } else {
-        $error = "Failed to upload file.";
+        echo "<script>alert('Failed to delete user.');</script>";
     }
+    $stmt->close();
 }
 
-$conn->close();
+// Fetch all users from the database
+$query = "SELECT * FROM feedback";
+$result = $conn->query($query);
+
 ?>
 
 <!DOCTYPE html>
@@ -37,13 +36,16 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add English Notes</title>
+    <title>Manage Feedbacks</title>
+    <!-- Include your main CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include the specific CSS for this page -->
     <link rel="stylesheet" href="admin_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <div class="admin-container">
+<div class="admin-container">
         <div class="admin-sidebar">
             <h2>Admin Panel</h2>
             <ul>
@@ -102,22 +104,41 @@ $conn->close();
                 <li><a href="admin_logout.php">Logout</a></li>
             </ul>
         </div>
+
+        <!-- Main content area -->
         <div class="admin-main">
-            <h1>Add English Notes</h1>
-            <?php if (isset($success)) { echo '<p class="success">'.$success.'</p>'; } ?>
-            <?php if (isset($error)) { echo '<p class="error">'.$error.'</p>'; } ?>
-            <form action="" method="post" enctype="multipart/form-data">
-                <label for="title">Title:</label>
-                <input type="text" name="title" id="title" required>
-
-                <label for="description">Description:</label>
-                <textarea name="description" id="description" rows="5" required></textarea>
-
-                <label for="file">Upload PDF:</label>
-                <input type="file" name="file" id="file" required>
-
-                <button type="submit" name="submit">Add Note</button>
-            </form>
+            <h1>Manage Feedbacks</h1>
+            <?php if ($result->num_rows > 0): ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Submitted At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo htmlspecialchars($row['name']); ?></td>
+                            <td><?php echo htmlspecialchars($row['email']); ?></td>
+                            <td><?php echo htmlspecialchars($row['message']); ?></td>
+                            <td><?php echo $row['submitted_at']; ?></td>
+                            <td>
+                                <a href="edit_user.php?id=<?php echo $row['id']; ?>">Edit</a>
+                                <a href="admin_feedback_crud.php?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                            </td>
+                        </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No feedbacks found.</p>
+            <?php endif; ?>
         </div>
     </div>
     <script>

@@ -21,7 +21,7 @@
                     <li><a href="notes.php">Notes</a></li>
                     <li><a href="news.php">News</a></li>
                     <li><a href="about.php">About</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="feedback.php">Feedback</a></li>
 
                     <!-- Check if the user is logged in -->
                     <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
