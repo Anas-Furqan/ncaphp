@@ -6,9 +6,10 @@ if (!isset($_SESSION['admin_logged_in'])) {
 }
 
 include 'connection.php';
+
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $sql = "DELETE FROM chemistry WHERE id = $id";
+    $sql = "DELETE FROM english2 WHERE id = $id";
     if ($conn->query($sql) === TRUE) {
         $success = "Note deleted successfully!";
     } else {
@@ -16,7 +17,7 @@ if (isset($_GET['delete'])) {
     }
 }
 
-$result = $conn->query("SELECT * FROM chemistry");
+$result = $conn->query("SELECT * FROM english2");
 
 $conn->close();
 ?>
@@ -26,7 +27,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Chemistry Notes</title>
+    <title>Manage English XII Notes</title>
     <link rel="stylesheet" href="admin_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -105,7 +106,7 @@ $conn->close();
         </ul>
     </div>
         <div class="admin-main">
-            <h1>Manage Chemistry Notes</h1>
+            <h1>Manage English XII Notes</h1>
             <?php if (isset($success)) { echo '<p class="success">'.$success.'</p>'; } ?>
             <?php if (isset($error)) { echo '<p class="error">'.$error.'</p>'; } ?>
             <table>
@@ -122,7 +123,7 @@ $conn->close();
                     <tr>
                         <td><?php echo $row['title']; ?></td>
                         <td><?php echo $row['description']; ?></td>
-                        <td><a href="uploads/chemistry/<?php echo $row['file']; ?>" target="_blank">View PDF</a></td>
+                        <td><a href="uploads/english2/<?php echo $row['file']; ?>" target="_blank">View PDF</a></td>
                         <td>
                             <a href="edit_physics.php?id=<?php echo $row['id']; ?>">Edit</a>
                             <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>

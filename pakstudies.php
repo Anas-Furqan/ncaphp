@@ -15,7 +15,7 @@ $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Fetch PDFs from the database
-$query = $pdo->prepare("SELECT * FROM pakstudies");
+$query = $pdo->prepare("SELECT * FROM pak_studies");
 $query->execute();
 $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
