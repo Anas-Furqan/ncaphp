@@ -25,7 +25,8 @@ session_start();
                 <a href="index.php" class="logo"> <img src="./images/logo.png" alt=""> NCA BAHRIA</a>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="notes.php">Notes</a></li>
+                    <li><a href="notes.php">Notes XI</a></li>
+                    <li><a href="notes2.php">Notes XII</a></li>
                     <li><a href="news.php">News</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="feedback.php">Feedback</a></li>

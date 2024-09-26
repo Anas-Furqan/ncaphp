@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Community Landing Page</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -14,11 +15,19 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                
+
                 <a href="index.php" class="logo"> <img src="./images/logo.png" alt=""> NCA BAHRIA</a>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="notes.php">Notes</a></li>
+                    <!-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Notes <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="notes.php">Notes XI (First Year)</a></li>
+                            <li><a href="notes2.php">Notes XII (Second Year)</a></li>
+                        </ul>
+                    </li> -->
+                    <li><a href="notes.php">Notes XI</a></li>
+                    <li><a href="notes2.php">Notes XII</a></li>
                     <li><a href="news.php">News</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="feedback.php">Feedback</a></li>
@@ -121,39 +130,56 @@
         </div>
     </section>
 
-   <footer>
-    <div class="footer-container">
-        <div class="footer-left">
-            <h2>Your College Community</h2>
-            <p>&copy; <?php echo date("Y"); ?> Your College. All rights reserved.</p>
-        </div>
-        <div class="footer-center">
-            <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:info@yourcollege.com">info@yourcollege.com</a></p>
-            <p>Phone: <a href="tel:+1234567890">+123-456-7890</a></p>
-            <p>Address: 123 College St, City, Country</p>
-        </div>
-        <div class="footer-right">
-            <h3>Follow Us</h3>
-            <div class="social-links">
-                <a href="https://facebook.com/yourcollege" target="_blank" class="social-icon facebook">Facebook</a>
-                <a href="https://twitter.com/yourcollege" target="_blank" class="social-icon twitter">Twitter</a>
-                <a href="https://instagram.com/yourcollege" target="_blank" class="social-icon instagram">Instagram</a>
-                <a href="https://linkedin.com/company/yourcollege" target="_blank" class="social-icon linkedin">LinkedIn</a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Your College Community</h2>
+                <p>&copy; <?php echo date("Y"); ?> Your College. All rights reserved.</p>
+            </div>
+            <div class="footer-center">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@yourcollege.com">info@yourcollege.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+123-456-7890</a></p>
+                <p>Address: 123 College St, City, Country</p>
+            </div>
+            <div class="footer-right">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com/yourcollege" target="_blank" class="social-icon facebook">Facebook</a>
+                    <a href="https://twitter.com/yourcollege" target="_blank" class="social-icon twitter">Twitter</a>
+                    <a href="https://instagram.com/yourcollege" target="_blank" class="social-icon instagram">Instagram</a>
+                    <a href="https://linkedin.com/company/yourcollege" target="_blank" class="social-icon linkedin">LinkedIn</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <ul class="footer-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="notes.php">Notes</a></li>
-            <li><a href="news.php">News</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <ul class="footer-nav">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="notes.php">Notes</a></li>
+                <li><a href="news.php">News</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var dropdownToggle = document.querySelector('.dropdown-toggle');
+    var dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    dropdownToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle('show');
+    });
 
+    document.addEventListener('click', function(e) {
+        if (!dropdownToggle.contains(e.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+
+</script>
 </html>

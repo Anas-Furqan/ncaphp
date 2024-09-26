@@ -62,6 +62,49 @@ body {
     background-color: #003399;
 }
 
+/* Dropdown menu styling */
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    min-width: 180px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-links li .dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-links li .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-links li .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-links li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+
 /* Hero Section Styling */
 .hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
