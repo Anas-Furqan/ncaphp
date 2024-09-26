@@ -73,14 +73,19 @@ $conn->close();
                 </ul>
             </li>
             <li>
-                <a href="#" class="dropdown-toggle">Pak Studies <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown">
-                    <li><a href="admin_add_pakstudies.php">Add Pak Studies Notes XI</a></li>
-                    <li><a href="admin_manage_pakstudies.php">Manage Pak Studies Notes XI</a></li>
-                    <li><a href="admin_add_pakstudies2.php">Add Pak Studies Notes XII</a></li>
-                    <li><a href="admin_manage_pakstudies2.php">Manage Pak Studies Notes XII</a></li>
-                </ul>
-            </li>
+                    <a href="#" class="dropdown-toggle">Islamiat <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="admin_add_islamiat.php">Add Islamiat Notes XI</a></li>
+                        <li><a href="admin_manage_islamiat.php">Manage Islamiat Notes XI</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Pak Studies <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="admin_add_pakstudies2.php">Add Pak Studies Notes XII</a></li>
+                        <li><a href="admin_manage_pakstudies2.php">Manage Pak Studies Notes XII</a></li>
+                    </ul>
+                </li>
             <li>
                 <a href="#" class="dropdown-toggle">Urdu <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown">

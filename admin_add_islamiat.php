@@ -11,11 +11,11 @@ if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $file = $_FILES['file']['name'];
-    $target_dir = "uploads/pak_studies/";
+    $target_dir = "uploads/islamiat/";
     $target_file = $target_dir . basename($file);
 
     if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
-        $sql = "INSERT INTO pak_studies (title, description, file) VALUES ('$title', '$description', '$file')";
+        $sql = "INSERT INTO islamiat (title, description, file) VALUES ('$title', '$description', '$file')";
         if ($conn->query($sql) === TRUE) {
             $success = "Note added successfully!";
         } else {
@@ -81,14 +81,19 @@ $conn->close();
                 </ul>
             </li>
             <li>
-                <a href="#" class="dropdown-toggle">Pak Studies <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown">
-                    <li><a href="admin_add_pakstudies.php">Add Pak Studies Notes XI</a></li>
-                    <li><a href="admin_manage_pakstudies.php">Manage Pak Studies Notes XI</a></li>
-                    <li><a href="admin_add_pakstudies2.php">Add Pak Studies Notes XII</a></li>
-                    <li><a href="admin_manage_pakstudies2.php">Manage Pak Studies Notes XII</a></li>
-                </ul>
-            </li>
+                    <a href="#" class="dropdown-toggle">Islamiat <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="admin_add_islamiat.php">Add Islamiat Notes XI</a></li>
+                        <li><a href="admin_manage_islamiat.php">Manage Islamiat Notes XI</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Pak Studies <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="admin_add_pakstudies2.php">Add Pak Studies Notes XII</a></li>
+                        <li><a href="admin_manage_pakstudies2.php">Manage Pak Studies Notes XII</a></li>
+                    </ul>
+                </li>
             <li>
                 <a href="#" class="dropdown-toggle">Urdu <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown">
@@ -113,7 +118,7 @@ $conn->close();
         </ul>
     </div>
         <div class="admin-main">
-            <h1>Add Pakistan Studies Notes</h1>
+            <h1>Add islamiat Notes</h1>
             <?php if (isset($success)) { echo '<p class="success">'.$success.'</p>'; } ?>
             <?php if (isset($error)) { echo '<p class="error">'.$error.'</p>'; } ?>
             <form action="" method="post" enctype="multipart/form-data">

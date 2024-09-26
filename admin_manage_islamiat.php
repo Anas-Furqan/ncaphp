@@ -9,7 +9,7 @@ include 'connection.php';
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $sql = "DELETE FROM pak_studies WHERE id = $id";
+    $sql = "DELETE FROM islamiat WHERE id = $id";
     if ($conn->query($sql) === TRUE) {
         $success = "Note deleted successfully!";
     } else {
@@ -17,7 +17,7 @@ if (isset($_GET['delete'])) {
     }
 }
 
-$result = $conn->query("SELECT * FROM pak_studies");
+$result = $conn->query("SELECT * FROM islamiat");
 
 $conn->close();
 ?>
@@ -27,7 +27,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Pakistan Studies Notes</title>
+    <title>Manage islamiat Notes</title>
     <link rel="stylesheet" href="admin_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -74,14 +74,19 @@ $conn->close();
                 </ul>
             </li>
             <li>
-                <a href="#" class="dropdown-toggle">Pak Studies <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown">
-                    <li><a href="admin_add_pakstudies.php">Add Pak Studies Notes XI</a></li>
-                    <li><a href="admin_manage_pakstudies.php">Manage Pak Studies Notes XI</a></li>
-                    <li><a href="admin_add_pakstudies2.php">Add Pak Studies Notes XII</a></li>
-                    <li><a href="admin_manage_pakstudies2.php">Manage Pak Studies Notes XII</a></li>
-                </ul>
-            </li>
+                    <a href="#" class="dropdown-toggle">Islamiat <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="admin_add_islamiat.php">Add Islamiat Notes XI</a></li>
+                        <li><a href="admin_manage_islamiat.php">Manage Islamiat Notes XI</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Pak Studies <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="admin_add_pakstudies2.php">Add Pak Studies Notes XII</a></li>
+                        <li><a href="admin_manage_pakstudies2.php">Manage Pak Studies Notes XII</a></li>
+                    </ul>
+                </li>
             <li>
                 <a href="#" class="dropdown-toggle">Urdu <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown">
@@ -106,7 +111,7 @@ $conn->close();
         </ul>
     </div>
         <div class="admin-main">
-            <h1>Manage Pakistan Studies Notes</h1>
+            <h1>Manage Islamiat Notes</h1>
             <?php if (isset($success)) { echo '<p class="success">'.$success.'</p>'; } ?>
             <?php if (isset($error)) { echo '<p class="error">'.$error.'</p>'; } ?>
             <table>
