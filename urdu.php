@@ -57,7 +57,7 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main class="physics-container">
-        <h1>Urdu Notes</h1>
+        <h1>Urdu XI Notes</h1>
         <div class="pdf-grid">
             <?php foreach ($pdfs as $pdf): ?>
                 <div class="pdf-item">

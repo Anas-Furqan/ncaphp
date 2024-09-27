@@ -15,7 +15,7 @@ $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Fetch PDFs from the database
-$query = $pdo->prepare("SELECT * FROM maths");
+$query = $pdo->prepare("SELECT * FROM urdu2");
 $query->execute();
 $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -25,9 +25,9 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maths Notes | Your College Community</title>
+    <title>Urdu Notes | Your College Community</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="maths.css">
+    <link rel="stylesheet" href="urdu.css">
 </head>
 <body>
     <!-- Header (Navbar) -->
@@ -57,23 +57,22 @@ $pdfs = $query->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main class="physics-container">
-    <h1>Maths XI Notes</h1>
+        <h1>Urdu XII Notes</h1>
         <div class="pdf-grid">
             <?php foreach ($pdfs as $pdf): ?>
                 <div class="pdf-item">
-                    <embed src="uploads/maths/<?php echo htmlspecialchars($pdf['file']); ?>" type="application/pdf" class="pdf-preview" />
+                    <embed src="uploads/urdu2/<?php echo htmlspecialchars($pdf['filename']); ?>" type="application/pdf" class="pdf-preview" />
                     <div class="pdf-details">
                         <h3><?php echo htmlspecialchars($pdf['title']); ?></h3>
                         <div class="pdf-buttons">
-                            <a href="uploads/<?php echo htmlspecialchars($pdf['file']); ?>" target="_blank" class="button view"><i class="fas fa-eye"></i>View PDF</a>
-                            <a href="uploads/<?php echo htmlspecialchars($pdf['file']); ?>" download class="button download"><i class="fas fa-download"></i>Download PDF</a>
+                            <a href="uploads/<?php echo htmlspecialchars($pdf['filename']); ?>" target="_blank" class="button view">View PDF</a>
+                            <a href="uploads/<?php echo htmlspecialchars($pdf['filename']); ?>" download class="button download">Download PDF</a>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
     </main>
-
 
     
    <footer>

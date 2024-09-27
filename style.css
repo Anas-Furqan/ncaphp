@@ -349,7 +349,7 @@ body {
     background-color: #003399;
 }
 /* Footer Styling */
-footer {
+/* footer {
     background-color: #0044cc;
     color: #fff;
     padding: 20px;
@@ -450,7 +450,7 @@ footer {
 
 .footer-nav a:hover {
     text-decoration: underline;
-}
+} */
 
 
 /* Responsive Styles */

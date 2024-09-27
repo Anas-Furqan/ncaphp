@@ -35,8 +35,8 @@ $conn->close();
 <body>
 <div class="admin-container">
     <div class="admin-sidebar">
-        <h2>Admin Panel</h2>
-        <ul>
+            <ul>
+                <li><a href="admin_dashboard.php">Dashboard NCA</a></li>
             <li>
                 <a href="#" class="dropdown-toggle">Physics <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown">

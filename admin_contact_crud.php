@@ -14,19 +14,19 @@ include 'connection.php';
 // Handle user deletion
 if (isset($_GET['delete'])) {
     $userId = intval($_GET['delete']);
-    $deleteQuery = "DELETE FROM feedback WHERE id = ?";
+    $deleteQuery = "DELETE FROM contact WHERE id = ?";
     $stmt = $conn->prepare($deleteQuery);
     $stmt->bind_param("i", $userId);
     if ($stmt->execute()) {
-        echo "<script>alert('User deleted successfully.'); window.location.href='user_crud.php';</script>";
+        echo "<script>alert('Contact deleted successfully.'); window.location.href='admin_contact_crud.php';</script>";
     } else {
-        echo "<script>alert('Failed to delete user.');</script>";
+        echo "<script>alert('Failed to delete contact.');</script>";
     }
     $stmt->close();
 }
 
 // Fetch all users from the database
-$query = "SELECT * FROM feedback";
+$query = "SELECT * FROM contact";
 $result = $conn->query($query);
 
 ?>
@@ -36,7 +36,7 @@ $result = $conn->query($query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Feedbacks</title>
+    <title>Manage Contacts</title>
     <!-- Include your main CSS file -->
     <link rel="stylesheet" href="style.css">
     <!-- Include the specific CSS for this page -->
@@ -124,7 +124,7 @@ $result = $conn->query($query);
     </div>
         <!-- Main content area -->
         <div class="admin-main">
-            <h1>Manage Feedbacks</h1>
+            <h1>Manage Contacts</h1>
             <?php if ($result->num_rows > 0): ?>
                 <table>
                     <thead>
@@ -132,6 +132,7 @@ $result = $conn->query($query);
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Subject</th>
                             <th>Message</th>
                             <th>Submitted At</th>
                             <th>Actions</th>
@@ -143,17 +144,18 @@ $result = $conn->query($query);
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo htmlspecialchars($row['email']); ?></td>
+                            <td><?php echo htmlspecialchars($row['subject']); ?></td>
                             <td><?php echo htmlspecialchars($row['message']); ?></td>
-                            <td><?php echo $row['submitted_at']; ?></td>
+                            <td><?php echo $row['created_at']; ?></td>
                             <td>
-                                <a href="admin_feedback_crud.php?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                                <a href="admin_contact_crud.php?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
                             </td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>
                 </table>
             <?php else: ?>
-                <p>No feedbacks found.</p>
+                <p>No contacts found.</p>
             <?php endif; ?>
         </div>
     </div>

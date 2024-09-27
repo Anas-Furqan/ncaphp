@@ -58,7 +58,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <li><i class="fa-solid fa-calculator subject-icon"></i> <a href="maths.php"> Mathematics</a></li>
                 <li><i class="fa-solid fa-computer subject-icon"></i><a href="computer.php"> Computer</a></li>
                 <li><i class="fa-solid fa-atom subject-icon"></i><a href="physics.php"> Physics</a></li>
-                <li><i class="fa-solid fa-flag subject-icon"></i><a href="pakstudies.php"> Pakistan Studies</a></li>
+                <li><i class="fa-solid fa-mosque subject-icon"></i><a href="islamiat.php"> Islamiat</a></li>
                 <li><i class="fa-solid fa-language  subject-icon"></i> <a href="english.php"> English</a></li>
                 <li><i class="fa-solid fa-language  subject-icon"></i> <a href="urdu.php"> Urdu</a></li>
                     
@@ -74,7 +74,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <li><i class="fa-solid fa-calculator subject-icon"></i> <a href="maths.php"> Mathematics</a></li>
                 <li><i class="fa-solid fa-flask subject-icon"></i><a href="chemistry.php"> Chemistry</a></li>
                 <li><i class="fa-solid fa-atom subject-icon"></i><a href="physics.php"> Physics</a></li>
-                <li><i class="fa-solid fa-flag subject-icon"></i><a href="pakstudies.php"> Pakistan Studies</a></li>
+                <li><i class="fa-solid fa-mosque subject-icon"></i><a href="islamiat.php"> Islamiat</a></li>
                 <li><i class="fa-solid fa-language  subject-icon"></i> <a href="english.php"> English</a></li>
                 <li><i class="fa-solid fa-language  subject-icon"></i> <a href="urdu.php"> Urdu</a></li>
                 </ul>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <li><i class="fa-solid fa-calculator subject-icon"></i> <a href="maths.php"> Mathematics</a></li>
                 <li><i class="fa-solid fa-flask subject-icon"></i><a href="chemistry.php"> Chemistry</a></li>
                 <li><i class="fa-solid fa-atom subject-icon"></i><a href="physics.php"> Physics</a></li>
-                <li><i class="fa-solid fa-flag subject-icon"></i><a href="pakstudies.php"> Pakistan Studies</a></li>
+                <li><i class="fa-solid fa-mosque subject-icon"></i><a href="islamiat.php"> Islamiat</a></li>
                 <li><i class="fa-solid fa-language  subject-icon"></i> <a href="english.php"> English</a></li>
                 <li><i class="fa-solid fa-language  subject-icon"></i> <a href="urdu.php"> Urdu</a></li>
                 </ul>

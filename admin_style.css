@@ -177,13 +177,15 @@ td {
 table th {
     background-color: #f4f4f4;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: left;
@@ -214,3 +216,7 @@ a:hover {
 p {
     font-size: 16px;
 }
+
+
+
+
